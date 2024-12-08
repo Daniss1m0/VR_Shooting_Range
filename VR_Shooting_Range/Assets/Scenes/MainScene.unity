@@ -4163,7 +4163,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 2064000553}
   recoilForce: 2
   damage: 20
-  bulletPrefab: {fileID: 3363642071799824374, guid: 9849f7d3bb2bbb646b98ab68df9a3c67,
+  bulletPrefab: {fileID: 318462705028552960, guid: 9849f7d3bb2bbb646b98ab68df9a3c67,
     type: 3}
 --- !u!1 &1366857249
 GameObject:
