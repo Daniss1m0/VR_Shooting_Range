@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
 
 [RequireComponent(typeof(Rigidbody))]
 public class PhysicsProjectile : Projectile
@@ -27,13 +29,19 @@ public class PhysicsProjectile : Projectile
     /*
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        ITakeDamage[] damageTakers = other.GetComponentsInParent<ITakeDamage>();
+        if (other.GetComponent<XRBaseInteractor>() != null) return;
 
+        Debug.Log($"Projectile hit: {other.name}");
+
+        ITakeDamage[] damageTakers = other.GetComponentsInParent<ITakeDamage>();
         foreach (var taker in damageTakers)
         {
             taker.TakeDamage(weapon, this, transform.position);
         }
+
+        Destroy(gameObject);
     }
     */
+
+
 }

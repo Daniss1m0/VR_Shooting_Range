@@ -14,6 +14,7 @@ public class PhysicsDamage : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(Weapon weapon, Projectile projectile, Vector3 contactPoint)
     {
+        Debug.Log("Take damage");
         rigidBody.AddForce(projectile.transform.forward * weapon.GetShootingForce(), ForceMode.Impulse);
     }
 }
