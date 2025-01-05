@@ -26,22 +26,4 @@ public class PhysicsProjectile : Projectile
         base.Launch();
         rigidBody.AddRelativeForce(Vector3.forward * weapon.GetShootingForce(), ForceMode.Impulse);
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<XRBaseInteractor>() != null) return;
-
-        Debug.Log($"Projectile hit: {other.name}");
-
-        ITakeDamage[] damageTakers = other.GetComponentsInParent<ITakeDamage>();
-        foreach (var taker in damageTakers)
-        {
-            taker.TakeDamage(weapon, this, transform.position);
-        }
-
-        Destroy(gameObject);
-    }
-    */
-
-
 }
