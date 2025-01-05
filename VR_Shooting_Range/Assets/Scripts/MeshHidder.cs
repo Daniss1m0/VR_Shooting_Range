@@ -1,25 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class MeshHidder : MonoBehaviour
+public class HideHandsOnGrab : MonoBehaviour
 {
-    private MeshRenderer[] meshes;
+    public GameObject leftHand;
+    public GameObject rightHand;
 
-    private void Awake()
+    private void OnEnable()
     {
-        meshes = GetComponentsInChildren<MeshRenderer>();
+        XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.selectEntered.AddListener(OnGrab);
+            grabInteractable.selectExited.AddListener(OnRelease);
+        }
     }
 
-    public void Show()
+    private void OnDisable()
     {
-        foreach (var mesh in meshes)
-            mesh.enabled = true;
+        XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.selectEntered.RemoveListener(OnGrab);
+            grabInteractable.selectExited.RemoveListener(OnRelease);
+        }
     }
 
-    public void Hide()
+    private void OnGrab(SelectEnterEventArgs args)
     {
-        foreach (var mesh in meshes)
-            mesh.enabled = false;
+        if (leftHand != null)
+        {
+            leftHand.SetActive(false);
+        }
+
+        if (rightHand != null)
+        {
+            rightHand.SetActive(false);
+        }
+    }
+
+    private void OnRelease(SelectExitEventArgs args)
+    {
+        if (leftHand != null)
+        {
+            leftHand.SetActive(true);
+        }
+
+        if (rightHand != null)
+        {
+            rightHand.SetActive(true);
+        }
     }
 }
