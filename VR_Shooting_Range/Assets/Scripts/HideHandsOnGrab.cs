@@ -29,26 +29,18 @@ public class HideHandsOnGrab : MonoBehaviour
     private void OnGrab(SelectEnterEventArgs args)
     {
         if (leftHand != null)
-        {
             leftHand.SetActive(false);
-        }
 
         if (rightHand != null)
-        {
             rightHand.SetActive(false);
-        }
     }
 
     private void OnRelease(SelectExitEventArgs args)
     {
         if (leftHand != null)
-        {
             leftHand.SetActive(true);
-        }
 
         if (rightHand != null)
-        {
             rightHand.SetActive(true);
-        }
     }
 }
