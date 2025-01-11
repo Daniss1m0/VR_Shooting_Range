@@ -27,20 +27,8 @@ public class Weapon : MonoBehaviour
 
     private void SetupInteractableWeaponEvents()
     {
-        interactableWeapon.onSelectEntered.AddListener(PickUpWeapon);
-        interactableWeapon.onSelectExited.AddListener(DropWeapon);
         interactableWeapon.onActivate.AddListener(StartShooting);
         interactableWeapon.onDeactivate.AddListener(StopShooting);
-    }
-
-    private void PickUpWeapon(XRBaseInteractor interactor)
-    {
-        //interactor.GetComponent<MeshHidder>().Hide();
-    }
-
-    private void DropWeapon(XRBaseInteractor interactor)
-    {
-        //interactor.GetComponent<MeshHidder>().Show();
     }
 
     protected virtual void StartShooting(XRBaseInteractor interactor)
