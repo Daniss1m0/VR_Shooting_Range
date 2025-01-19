@@ -3407,7 +3407,7 @@ GameObject:
   - component: {fileID: 1018081295}
   m_Layer: 0
   m_Name: Palec
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3421,7 +3421,7 @@ Transform:
   m_GameObject: {fileID: 1018081293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0158, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0359, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3617,7 +3617,7 @@ GameObject:
   - component: {fileID: 1039875986}
   m_Layer: 0
   m_Name: Palec
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3631,7 +3631,7 @@ Transform:
   m_GameObject: {fileID: 1039875984}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0158, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0412, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5292,7 +5292,7 @@ GameObject:
   - component: {fileID: 1290911664}
   m_Layer: 0
   m_Name: Pistol
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5424,7 +5424,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -5474,7 +5474,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290911656}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5536,7 +5536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingForce: 2
   bulletSpawn: {fileID: 2064000553}
-  recoilForce: 2
+  recoilForce: 1
   damage: 20
   bulletPrefab: {fileID: 318462705028552960, guid: 9849f7d3bb2bbb646b98ab68df9a3c67,
     type: 3}
@@ -5841,7 +5841,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e00b27b8d9c47264ab84203ddf941b2c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e00b27b8d9c47264ab84203ddf941b2c,
         type: 3}
@@ -6064,7 +6064,7 @@ GameObject:
   - component: {fileID: 1410841094}
   m_Layer: 0
   m_Name: Karabin
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6248,7 +6248,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410841086}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -6310,7 +6310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingForce: 1
   bulletSpawn: {fileID: 1343784646}
-  recoilForce: 2
+  recoilForce: 1
   damage: 20
   bulletPrefab: {fileID: 318462705028552960, guid: 9849f7d3bb2bbb646b98ab68df9a3c67,
     type: 3}
@@ -6776,7 +6776,7 @@ Transform:
   m_GameObject: {fileID: 1523701812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -0.0054915743, y: -0.427, z: -0.32}
+  m_LocalPosition: {x: -0.0054915743, y: -0.427, z: 1.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7690,7 +7690,7 @@ GameObject:
   - component: {fileID: 1762198741}
   m_Layer: 0
   m_Name: Noz
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7821,7 +7821,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

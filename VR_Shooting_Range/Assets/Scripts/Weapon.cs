@@ -46,9 +46,11 @@ public class Weapon : MonoBehaviour
         ApplyRecoil();
     }
 
+    //Odrzut
     private void ApplyRecoil()
     {
         rigidBody.AddRelativeForce(Vector3.back * recoilForce, ForceMode.Impulse);
+        //rigidBody.AddRelativeTorque(Vector3.up * (recoilForce / 2), ForceMode.Impulse);
     }
 
     public float GetShootingForce()
