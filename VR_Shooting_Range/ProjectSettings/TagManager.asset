@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - FallingObject
   - Weapon
+  - RightHand
+  - LeftHand
   layers:
   - Default
   - TransparentFX
