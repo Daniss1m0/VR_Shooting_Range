@@ -7,9 +7,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PhysicsProjectile : Projectile
 {
     [SerializeField] private float lifeTime;
-    [SerializeField] private GameObject decalPrefab; // Префаб для decal
-    [SerializeField] private float decalLifetime = 10f; // Время жизни decal
+    [SerializeField] private GameObject decalPrefab;
+    [SerializeField] private float decalLifetime = 10f;
     private Rigidbody rigidBody;
+    private bool decalCreated = false;
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class PhysicsProjectile : Projectile
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (decalPrefab != null)
+        if (!decalCreated && decalPrefab != null)
         {
             ContactPoint contact = collision.contacts[0];
 
@@ -39,9 +40,10 @@ public class PhysicsProjectile : Projectile
             decal.transform.SetParent(collision.transform);
 
             Destroy(decal, decalLifetime);
+
+            decalCreated = true;
         }
 
         Destroy(gameObject);
     }
-
 }
