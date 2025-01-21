@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class HitManager : MonoBehaviour
 {
-    public TMP_Text txttmp;
+    [SerializeField] private TextMeshProUGUI hitsText;
 
-    private int totalHits = 0;
-
-    public void IncreaseHitCount()
+    private void Start()
     {
-        totalHits++;
-        UpdateHitText();
+        if (hitsText == null)
+        {
+            hitsText = FindObjectOfType<TextMeshProUGUI>();
+        }
     }
 
-    private void UpdateHitText()
+    private void Update()
     {
-        txttmp.text = "Total Hits: " + totalHits.ToString();
+        if (hitsText != null)
+        {
+            hitsText.text = $"Total Hits in targets: {HitCounter.TotalHits}";
+        }
     }
 }

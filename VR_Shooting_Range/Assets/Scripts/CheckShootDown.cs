@@ -1,21 +1,21 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CheckHit : MonoBehaviour
+public class CheckShootDown : MonoBehaviour
 {
-    private HitManager hitManager;
+    private ShootDownTheTargets shootdownTheTargetsManager;
     private HashSet<GameObject> hitObjects = new HashSet<GameObject>();
 
     private void Start()
     {
-        hitManager = FindObjectOfType<HitManager>();
+        shootdownTheTargetsManager = FindObjectOfType<ShootDownTheTargets>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("FallingObject") && !hitObjects.Contains(collision.gameObject))
         {
-            hitManager.IncreaseHitCount();
+            shootdownTheTargetsManager.IncreaseHitCount();
             hitObjects.Add(collision.gameObject);
             // Destroy(collision.gameObject);
         }

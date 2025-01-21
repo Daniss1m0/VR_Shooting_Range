@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(XRGrabInteractable))]
@@ -14,7 +13,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected Transform bulletSpawn;
     [SerializeField] private float recoilForce;
     [SerializeField] private float damage;
+    [SerializeField] private int maxAmmo = 30;
+    [SerializeField] private TextMeshProUGUI ammoText;
 
+    protected int currentAmmo;
     private Rigidbody rigidBody;
     private XRGrabInteractable interactableWeapon;
 
@@ -23,6 +25,14 @@ public class Weapon : MonoBehaviour
         interactableWeapon = GetComponent<XRGrabInteractable>();
         rigidBody = GetComponent<Rigidbody>();
         SetupInteractableWeaponEvents();
+        currentAmmo = maxAmmo;
+
+        if (ammoText == null)
+        {
+            ammoText = FindObjectOfType<TextMeshProUGUI>();
+        }
+
+        UpdateAmmoText();
     }
 
     private void SetupInteractableWeaponEvents()
@@ -31,26 +41,27 @@ public class Weapon : MonoBehaviour
         interactableWeapon.onDeactivate.AddListener(StopShooting);
     }
 
-    protected virtual void StartShooting(XRBaseInteractor interactor)
-    {
+    protected virtual void StartShooting(XRBaseInteractor interactor) { }
 
-    }
-
-    protected virtual void StopShooting(XRBaseInteractor interactor)
-    {
-
-    }
+    protected virtual void StopShooting(XRBaseInteractor interactor) { }
 
     protected virtual void Shoot()
     {
-        ApplyRecoil();
+        if (currentAmmo > 0)
+        {
+            currentAmmo--;
+            ApplyRecoil();
+            UpdateAmmoText();
+        }
+        else
+        {
+            UpdateAmmoText("Out of ammo!");
+        }
     }
 
-    //Odrzut
     private void ApplyRecoil()
     {
         rigidBody.AddRelativeForce(Vector3.back * recoilForce, ForceMode.Impulse);
-        //rigidBody.AddRelativeTorque(Vector3.up * (recoilForce / 2), ForceMode.Impulse);
     }
 
     public float GetShootingForce()
@@ -61,5 +72,13 @@ public class Weapon : MonoBehaviour
     public float GetDamage()
     {
         return damage;
+    }
+
+    private void UpdateAmmoText(string extraText = "")
+    {
+        if (ammoText != null)
+        {
+            ammoText.text = extraText == "" ? $"Ammo: {currentAmmo}/{maxAmmo}" : extraText;
+        }
     }
 }
