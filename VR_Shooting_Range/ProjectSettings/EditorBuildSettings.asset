@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StaticTargetsScene (Main).unity
-    guid: 76ac2e466eb81ca41a7b74ede1672f1a
+    path: Assets/Scenes/Level2 (Main).unity
+    guid: 1f4dbdaf88d9dcc4bb89f93cc0fc2a3d
   - enabled: 1
-    path: Assets/Scenes/MovingTargetsScene.unity
-    guid: d6ea225aa6240e347b7f167d4605ba69
+    path: Assets/Scenes/Level1.unity
+    guid: 441960f0d9d14044cb4a1ac09ce76bd7
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: cfe36031767334d4d8fc2af595900f92
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 2410b489bce0fe743b002576c5d9ebcc
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 2e1f761cbc26a604287a71eda666651d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}

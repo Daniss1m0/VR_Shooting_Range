@@ -3,16 +3,16 @@ using TMPro;
 
 public class TimerManager : MonoBehaviour
 {
-    public TMP_Text timerText; // Текстовое поле для отображения времени
-    public TMP_Text messageText; // Текстовое поле для вывода сообщения (например, "Time's up!")
-    private float timer = 0f; // Значение таймера
-    private bool isRunning = false; // Флаг, указывает, работает ли таймер
-    private const float timeLimit = 30f; // Лимит времени в секундах
+    public TMP_Text timerText;
+    public TMP_Text messageText;
+    private float timer = 0f;
+    private bool isRunning = false;
+    private const float timeLimit = 30f;
 
     public void StartTimer()
     {
         isRunning = true;
-        messageText.text = ""; // Очищаем текст сообщения при старте таймера
+        messageText.text = "";
     }
 
     public void StopTimer()
@@ -26,7 +26,6 @@ public class TimerManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            // Проверяем, достиг ли таймер лимита
             if (timer >= timeLimit)
             {
                 TimerEnded();
@@ -38,7 +37,6 @@ public class TimerManager : MonoBehaviour
 
     private void UpdateTimerText()
     {
-        // Форматируем время в виде "минуты:секунды.миллисекунды"
         int minutes = Mathf.FloorToInt(timer / 60f);
         int seconds = Mathf.FloorToInt(timer % 60f);
         int milliseconds = Mathf.FloorToInt((timer * 1000) % 1000);
@@ -48,8 +46,8 @@ public class TimerManager : MonoBehaviour
 
     private void TimerEnded()
     {
-        isRunning = false; // Останавливаем таймер
-        messageText.text = "Time's up!"; // Выводим сообщение
-        messageText.color = Color.red; // Делаем текст красным
+        isRunning = false;
+        messageText.text = "Time's up!";
+        messageText.color = Color.red;
     }
 }

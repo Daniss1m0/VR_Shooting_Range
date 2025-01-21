@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MoveToMovingScene : MonoBehaviour
+public class MoveToLevel1Scene : MonoBehaviour
 {
     public void MoveToScene()
     {
-        SceneManager.LoadScene("MovingTargetsScene");
+        SceneManager.LoadScene("Level1");
     }
 }
